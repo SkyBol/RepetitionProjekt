@@ -1,4 +1,4 @@
-package ch.noseryoung.blockshop.blockShop;
+package ch.noseryoung.blockshop.blockshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

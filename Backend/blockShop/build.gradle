@@ -20,7 +20,7 @@ dependencies {
 	implementation 		'org.springframework.boot:spring-boot-starter:2.7.2'
 	implementation 		'org.springdoc:springdoc-openapi-ui:1.6.9'
 	testImplementation 	'org.springframework.boot:spring-boot-starter-test:2.7.2'
-
+	implementation 		'io.springfox:springfox-swagger-ui:3.0.0'
 	compileOnly 		'org.projectlombok:lombok:1.18.24'
 	developmentOnly 	'org.springframework.boot:spring-boot-devtools:2.7.2'
 	runtimeOnly 		'org.postgresql:postgresql:42.3.6'
