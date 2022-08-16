@@ -3575,3 +3575,186 @@ org.springframework.dao.EmptyResultDataAccessException: No class ch.noseryoung.b
 2022-08-16 11:15:46.733  INFO 22000 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-08-16 11:15:46.734  INFO 22000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-08-16 11:15:46.735  INFO 22000 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-16 11:39:33.514  INFO 23136 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 23136 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-16 11:39:33.516  INFO 23136 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-16 11:39:33.568  INFO 23136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-16 11:39:33.568  INFO 23136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-16 11:39:34.474  INFO 23136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-16 11:39:34.551  INFO 23136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 4 JPA repository interfaces.
+2022-08-16 11:39:35.476  INFO 23136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-16 11:39:35.492  INFO 23136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-16 11:39:35.493  INFO 23136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-16 11:39:35.622  INFO 23136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-16 11:39:35.622  INFO 23136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2052 ms
+2022-08-16 11:39:35.799  INFO 23136 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-16 11:39:35.857  INFO 23136 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-16 11:39:36.060  INFO 23136 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-16 11:39:36.207  INFO 23136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-16 11:39:36.379  INFO 23136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-16 11:39:36.414  INFO 23136 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-16 11:39:37.233  INFO 23136 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-16 11:39:37.241  INFO 23136 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 11:39:37.893  WARN 23136 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-16 11:39:38.018  WARN 23136 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/security/oauth2/server/resource/web/BearerTokenResolver
+2022-08-16 11:39:38.019  INFO 23136 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 11:39:38.022  INFO 23136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-16 11:39:38.028  INFO 23136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-16 11:39:38.033  INFO 23136 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-16 11:39:38.048  INFO 23136 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-16 11:39:38.077 ERROR 23136 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/security/oauth2/server/resource/web/BearerTokenResolver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.2.jar:2.7.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.2.jar:2.7.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.2.jar:2.7.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.2.jar:2.7.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.2.jar:2.7.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.2.jar:2.7.2]
+	at ch.noseryoung.blockshop.blockshop.BlockShopApplication.main(BlockShopApplication.java:23) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.2.jar:2.7.2]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/security/oauth2/server/resource/web/BearerTokenResolver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 26 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/security/oauth2/server/resource/web/BearerTokenResolver
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.oauth2ResourceServer(HttpSecurity.java:2616) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at ch.noseryoung.blockshop.blockshop.security.SecurityConfig.configure(SecurityConfig.java:53) ~[main/:na]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.getHttp(WebSecurityConfigurerAdapter.java:221) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:319) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:96) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at ch.noseryoung.blockshop.blockshop.security.SecurityConfig$$EnhancerBySpringCGLIB$$5b4b2b3c.init(<generated>) ~[main/:na]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:338) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:300) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:126) ~[spring-security-config-5.7.2.jar:5.7.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.security.oauth2.server.resource.web.BearerTokenResolver
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 42 common frames omitted
+
+2022-08-16 11:42:38.974  INFO 528 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 528 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-16 11:42:38.976  INFO 528 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-16 11:42:39.048  INFO 528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-16 11:42:39.048  INFO 528 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-16 11:42:40.453  INFO 528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-16 11:42:40.554  INFO 528 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 4 JPA repository interfaces.
+2022-08-16 11:42:42.011  INFO 528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-16 11:42:42.028  INFO 528 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-16 11:42:42.029  INFO 528 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-16 11:42:42.209  INFO 528 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-16 11:42:42.209  INFO 528 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3160 ms
+2022-08-16 11:42:42.484  INFO 528 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-16 11:42:42.579  INFO 528 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-16 11:42:42.942  INFO 528 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-16 11:42:43.270  INFO 528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-16 11:42:43.617  INFO 528 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-16 11:42:43.685  INFO 528 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-16 11:42:45.218  INFO 528 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-16 11:42:45.228  INFO 528 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 11:42:46.409  WARN 528 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-16 11:42:46.686  INFO 528 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@169aa90b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@440a9182, org.springframework.security.web.context.SecurityContextPersistenceFilter@249dafa4, org.springframework.security.web.header.HeaderWriterFilter@1dfb4b8e, org.springframework.security.web.authentication.logout.LogoutFilter@49c52bad, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58107239, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3e3d080e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2542f211, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75bcb3bc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ab01f85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c12e492, org.springframework.security.web.session.SessionManagementFilter@7922d283, org.springframework.security.web.access.ExceptionTranslationFilter@72613933, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42baf78e]
+2022-08-16 11:42:48.535  INFO 528 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-16 11:42:48.610  INFO 528 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-16 11:42:48.631  INFO 528 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 10.231 seconds (JVM running for 10.884)
+2022-08-16 12:43:33.848  INFO 21580 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 21580 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-16 12:43:33.851  INFO 21580 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-16 12:43:33.906  INFO 21580 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-16 12:43:33.906  INFO 21580 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-16 12:43:34.810  INFO 21580 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-16 12:43:34.878  INFO 21580 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2022-08-16 12:43:35.748  INFO 21580 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-16 12:43:35.760  INFO 21580 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-16 12:43:35.761  INFO 21580 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-16 12:43:35.884  INFO 21580 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-16 12:43:35.884  INFO 21580 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1976 ms
+2022-08-16 12:43:36.059  INFO 21580 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-16 12:43:36.122  INFO 21580 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-16 12:43:36.314  INFO 21580 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-16 12:43:36.465  INFO 21580 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-16 12:43:36.661  INFO 21580 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-16 12:43:36.709  INFO 21580 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-16 12:43:37.800  INFO 21580 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-16 12:43:37.810  INFO 21580 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 12:43:38.708  WARN 21580 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-16 12:43:38.758  WARN 21580 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authApi': Unsatisfied dependency expressed through field 'authManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2022-08-16 12:43:38.760  INFO 21580 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 12:43:38.762  INFO 21580 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-16 12:43:38.767  INFO 21580 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-16 12:43:38.772  INFO 21580 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-16 12:43:38.789  INFO 21580 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-16 12:43:38.824 ERROR 21580 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authManager in ch.noseryoung.blockshop.blockshop.security.jwt.AuthApi required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2022-08-16 12:45:10.289  INFO 24316 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 24316 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-16 12:45:10.291  INFO 24316 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-16 12:45:10.344  INFO 24316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-16 12:45:10.344  INFO 24316 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-16 12:45:11.212  INFO 24316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-16 12:45:11.276  INFO 24316 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2022-08-16 12:45:12.170  INFO 24316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-16 12:45:12.184  INFO 24316 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-16 12:45:12.185  INFO 24316 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-16 12:45:12.305  INFO 24316 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-16 12:45:12.305  INFO 24316 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1960 ms
+2022-08-16 12:45:12.472  INFO 24316 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-16 12:45:12.535  INFO 24316 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-16 12:45:12.736  INFO 24316 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-16 12:45:12.875  INFO 24316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-16 12:45:13.064  INFO 24316 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-16 12:45:13.099  INFO 24316 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-16 12:45:13.886  INFO 24316 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-16 12:45:13.895  INFO 24316 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 12:45:14.589  WARN 24316 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-16 12:45:14.737  INFO 24316 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@316764f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@223050cf, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a6de4ec, org.springframework.security.web.header.HeaderWriterFilter@5eed0773, org.springframework.security.web.authentication.logout.LogoutFilter@29c27972, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@309cdeca, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7e6794da, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@29a57fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46edd681, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65ea74d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39983a23, org.springframework.security.web.session.SessionManagementFilter@376a2640, org.springframework.security.web.access.ExceptionTranslationFilter@7fbaa14f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47dfe91b]
+2022-08-16 12:45:15.613  INFO 24316 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-16 12:45:15.653  INFO 24316 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-16 12:45:15.664  INFO 24316 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 5.854 seconds (JVM running for 6.385)
+2022-08-16 12:45:34.627  INFO 24316 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-16 12:45:34.627  INFO 24316 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-16 12:45:34.629  INFO 24316 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-16 12:45:34.695  WARN 24316 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]

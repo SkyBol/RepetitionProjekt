@@ -53,11 +53,11 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
-        if (user == null){throw new UsernameNotFoundException("User not found");}
-        else {
-            Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-            user.getRole().getAuthorities().forEach(authority -> authorities.add(new SimpleGrantedAuthority(authority.getName())));
-            return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), authorities);
-        }
+        if (user == null)
+            throw new UsernameNotFoundException("User not found");
+
+        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        user.getRole().getAuthorities().forEach(authority -> authorities.add(new SimpleGrantedAuthority(authority.getName())));
+        return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), authorities);
     }
 }
