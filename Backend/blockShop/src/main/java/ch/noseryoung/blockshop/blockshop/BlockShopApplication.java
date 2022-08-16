@@ -55,6 +55,4 @@ public class BlockShopApplication {
 		userRepository.save(admin_user);
 	}
 
-	@Bean
-	PasswordEncoder passwordEncoder() {return NoOpPasswordEncoder.getInstance();}
 }

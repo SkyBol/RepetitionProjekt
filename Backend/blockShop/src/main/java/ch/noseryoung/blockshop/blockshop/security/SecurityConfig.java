@@ -1,62 +1,85 @@
 package ch.noseryoung.blockshop.blockshop.security;
 
 
-import ch.noseryoung.blockshop.blockshop.security.user.UserService;
+import ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter;
+import ch.noseryoung.blockshop.blockshop.security.user.User;
+import ch.noseryoung.blockshop.blockshop.security.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig {
 
-    private static final String BASE_API_URL = "/api/**";
+    @Autowired private JwtTokenFilter jwtTokenFilter;
+    @Autowired private UserRepository userRepository;
 
-    private final UserService userDetailsService;
-    private final PasswordEncoder passwordEncoder;
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsService() {
+            @Override
+            public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+                User user = userRepository.findByUsername(username);
+                if (user == null)
+                    throw new UsernameNotFoundException("User not found");
 
-    public SecurityConfig(UserService userDetailsService, PasswordEncoder passwordEncoder) {
-        this.userDetailsService = userDetailsService;
-        this.passwordEncoder = passwordEncoder;
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
-    }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
-    }
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/login").permitAll()
-                .antMatchers(HttpMethod.GET, BASE_API_URL).hasAuthority("get")
-                .antMatchers(HttpMethod.PUT, BASE_API_URL).hasAuthority("put")
-                .antMatchers(HttpMethod.POST, BASE_API_URL).hasAuthority("post")
-                .antMatchers(HttpMethod.DELETE, BASE_API_URL).hasAuthority("delete")
-                .and()
-                .formLogin()
-                .loginProcessingUrl("/login")
-                .failureUrl("/login.html?error=true")
-                .permitAll();
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+                user.getRole().getAuthorities().forEach(authority -> authorities.add(new SimpleGrantedAuthority(authority.getName())));
+                return new org.springframework.security.core.userdetails.User(user.getName(), user.getPassword(), authorities);
+            }
+        };
     }
 
     @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+    public PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
+        // return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig)
+            throws Exception { return authConfig.getAuthenticationManager(); }
+
+    @Bean
+    public SecurityFilterChain configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+        http.authorizeRequests()
+                .antMatchers("/login", "/login_html").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginProcessingUrl("/login_html")
+                .failureUrl("/login_html.html?error=true");
+
+        http.exceptionHandling()
+                .authenticationEntryPoint(
+                        (request, response, ex) -> response
+                                .sendError(HttpServletResponse.SC_UNAUTHORIZED, ex.getMessage())
+                );
+
+        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
     }
 }
