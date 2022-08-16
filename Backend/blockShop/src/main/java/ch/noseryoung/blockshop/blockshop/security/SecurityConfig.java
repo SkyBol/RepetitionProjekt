@@ -44,20 +44,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, BASE_API_URL).hasAuthority("put")
                 .antMatchers(HttpMethod.POST, BASE_API_URL).hasAuthority("post")
                 .antMatchers(HttpMethod.DELETE, BASE_API_URL).hasAuthority("delete")
-                .antMatchers("/**").permitAll()
-                .and()
-                .formLogin()
-                .loginProcessingUrl("/login");
-        /*
-        .antMatchers("/login").permitAll()
-                .antMatchers(HttpMethod.GET, BASE_API_URL).hasAuthority("get")
-                .antMatchers(HttpMethod.PUT, BASE_API_URL).hasAuthority("put")
-                .antMatchers(HttpMethod.POST, BASE_API_URL).hasAuthority("post")
-                .antMatchers(HttpMethod.DELETE, BASE_API_URL).hasAuthority("delete")
                 .and()
                 .formLogin()
                 .loginProcessingUrl("/login")
-                .failureUrl("/login.html?error=true");
-        */
+                .failureUrl("/login.html?error=true")
+                .permitAll();
     }
 }

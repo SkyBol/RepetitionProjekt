@@ -50,7 +50,7 @@ public class BlockShopApplication {
 		roleRepository.save(staff);
 		roleRepository.save(user);
 
-		User admin_user = new User("admin", "password", admin);
+		User admin_user = new User("admin", "123", admin);
 
 		userRepository.save(admin_user);
 	}
