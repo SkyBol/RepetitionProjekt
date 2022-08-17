@@ -65,7 +65,7 @@ public class SecurityConfig {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeRequests()
-                .antMatchers("/login", "/login_html").permitAll()
+                .antMatchers("/login", "/login_html", "/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
