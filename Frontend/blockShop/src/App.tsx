@@ -1,27 +1,26 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-
-type Block = {
-  id : number;
-  name : string;
-  imageLink : string;
-}
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DetailPage from "./components/pages/DetailPage";
+import ListPage from "./components/pages/ListPage";
+import LoginPage from "./components/pages/LoginPage";
+import NotFoundPage from "./components/pages/NotFoundPage";
+import ProtectedPages from "./components/pages/ProtectedPages";
 
 function App() {
-  const axiosIns = axios.create({baseURL: 'http://localhost:8080/api/'});
-  const {list, setList} = useState<Block>;
-
-  useEffect(() => {
-    axiosIns.get('block')
-    .then((res) => {
-      list
-    })
-  }, []);
-
   return (
-    <div className="App">
-      
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={ <LoginPage isLogin={ true }/> } />
+          <Route path="/register" element={ <LoginPage isLogin={ false }/> } />
+          <Route path='*' element={
+            <ProtectedPages>
+              <Route path="/" element={ <ListPage /> } />
+              <Route path="/:id" element={ <DetailPage /> } />
+              <Route path="*" element={ <NotFoundPage /> } />
+            </ProtectedPages>
+          } />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
