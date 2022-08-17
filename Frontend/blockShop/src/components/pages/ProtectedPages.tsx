@@ -3,7 +3,7 @@ import { isAuthorized } from '../service/AccountManagement';
 
 function ProtectedPages({children} : {children : JSX.Element[] | JSX.Element}) {
     if (isAuthorized()) {
-        return <Routes>children</Routes>;
+        return <Routes> { children } </Routes>;
     } else {
         return <Navigate to={ '/login' } />
     }

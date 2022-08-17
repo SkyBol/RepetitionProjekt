@@ -6,7 +6,7 @@ export async function getAllBlocks() {
         await axiosDefault.get('/api/block/')
             .then(res => { return res.data; })
             .catch(err => { throw err; })
-    );
+    )
 }
 
 export async function getBlock({id} : {id : number}) {
@@ -18,7 +18,7 @@ export async function getBlock({id} : {id : number}) {
 }
 
 export async function postBlock({block} : {block : block}) {
-    await axiosDefault.post('/api/block/', 
+    await axiosDefault.post('/api/block/',
         { "name" : block.name, "imageLink" : block.imageLink }
     )
         .catch(err => { throw err; });

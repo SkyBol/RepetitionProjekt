@@ -16,6 +16,12 @@ public class Block {
     @Column(name = "image_link", nullable = false)
     private String imageLink;
 
+    public Block () {}
+    public Block (String name, String imageLink) {
+        this.name = name;
+        this.imageLink = imageLink;
+    }
+
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
     public String getName() {return name;}

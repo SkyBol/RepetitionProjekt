@@ -1,5 +1,7 @@
 package ch.noseryoung.blockshop.blockshop;
 
+import ch.noseryoung.blockshop.blockshop.block.Block;
+import ch.noseryoung.blockshop.blockshop.block.BlockRepository;
 import ch.noseryoung.blockshop.blockshop.security.authority.Authority;
 import ch.noseryoung.blockshop.blockshop.security.authority.AuthorityRepository;
 import ch.noseryoung.blockshop.blockshop.security.role.Role;
@@ -10,10 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -29,6 +28,8 @@ public class BlockShopApplication {
 	UserRepository userRepository;
 	@Autowired
 	RoleRepository roleRepository;
+	@Autowired
+	BlockRepository blockRepository;
 
 	@EventListener
 	public void startValues(ApplicationReadyEvent ignore) {
@@ -53,6 +54,8 @@ public class BlockShopApplication {
 		User admin_user = new User("admin", "123", admin);
 
 		userRepository.save(admin_user);
+
+		Block block1 = new Block("block1", "www.google.com");
 	}
 
 }

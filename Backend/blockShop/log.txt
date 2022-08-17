@@ -1752,3 +1752,538 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2022-08-17 13:56:56.699  WARN 10588 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> ch.noseryoung.blockshop.blockshop.security.jwt.JwtController.login(ch.noseryoung.blockshop.blockshop.security.jwt.AuthRequest): [Field error in object 'authRequest' on field 'name': rejected value [null]; codes [NotNull.authRequest.name,NotNull.name,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authRequest.name,name]; arguments []; default message [name]]; default message [darf nicht null sein]] ]
 2022-08-17 14:00:17.140 ERROR 10588 --- [http-nio-8080-exec-2] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
 2022-08-17 14:11:11.150  WARN 10588 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> ch.noseryoung.blockshop.blockshop.security.jwt.JwtController.register(ch.noseryoung.blockshop.blockshop.security.jwt.AuthRequest): [Field error in object 'authRequest' on field 'name': rejected value [null]; codes [NotNull.authRequest.name,NotNull.name,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [authRequest.name,name]; arguments []; default message [name]]; default message [darf nicht null sein]] ]
+2022-08-17 14:31:47.454  INFO 36040 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 36040 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 14:31:47.457  INFO 36040 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 14:31:47.571  INFO 36040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 14:31:47.572  INFO 36040 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 14:31:49.478  INFO 36040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 14:31:49.622  INFO 36040 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 4 JPA repository interfaces.
+2022-08-17 14:31:51.456  INFO 36040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 14:31:51.480  INFO 36040 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 14:31:51.486  INFO 36040 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 14:31:51.753  INFO 36040 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 14:31:51.755  INFO 36040 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4182 ms
+2022-08-17 14:31:52.188  INFO 36040 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 14:31:52.324  INFO 36040 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 14:31:52.770  INFO 36040 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 14:31:53.078  INFO 36040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 14:31:53.483  INFO 36040 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 14:31:53.584  INFO 36040 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 14:31:55.353  INFO 36040 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 14:31:55.369  INFO 36040 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 14:31:56.656  INFO 36040 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@773e936b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@749d46aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@60c99550, org.springframework.security.web.header.HeaderWriterFilter@36aa0966, org.springframework.web.filter.CorsFilter@30617945, org.springframework.security.web.authentication.logout.LogoutFilter@2dc7e6cb, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@304dbd1a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@77c537e5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3eb30133, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@188f721c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@916a263, org.springframework.security.web.session.SessionManagementFilter@7e2bd843, org.springframework.security.web.access.ExceptionTranslationFilter@5cb6ba8d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2041f757]
+2022-08-17 14:31:56.979  WARN 36040 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 14:31:59.132  INFO 36040 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 14:31:59.218  INFO 36040 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 14:31:59.244  INFO 36040 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 12.512 seconds (JVM running for 13.799)
+2022-08-17 14:44:51.790  INFO 39632 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 39632 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 14:44:51.793  INFO 39632 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 14:44:51.940  INFO 39632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 14:44:51.940  INFO 39632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 14:44:53.945  INFO 39632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 14:44:54.063  INFO 39632 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 4 JPA repository interfaces.
+2022-08-17 14:44:55.707  INFO 39632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 14:44:55.733  INFO 39632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 14:44:55.733  INFO 39632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 14:44:55.940  INFO 39632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 14:44:55.941  INFO 39632 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4000 ms
+2022-08-17 14:44:56.261  INFO 39632 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 14:44:56.366  INFO 39632 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 14:44:56.715  INFO 39632 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 14:44:56.926  INFO 39632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 14:44:57.220  INFO 39632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 14:44:57.287  INFO 39632 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 14:44:59.003  INFO 39632 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 14:44:59.035  INFO 39632 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 14:45:00.855  INFO 39632 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3606b7d8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b494e2f, org.springframework.security.web.context.SecurityContextPersistenceFilter@36a6080a, org.springframework.security.web.header.HeaderWriterFilter@376d0a95, org.springframework.web.filter.CorsFilter@43c8d774, org.springframework.security.web.authentication.logout.LogoutFilter@564cb083, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@6d2eb1f2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@633585d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47d91ada, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26819124, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14964d0e, org.springframework.security.web.session.SessionManagementFilter@105d6137, org.springframework.security.web.access.ExceptionTranslationFilter@6d3b4068, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2394a0cf]
+2022-08-17 14:45:01.164  WARN 39632 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 14:45:02.796  INFO 39632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 14:45:02.883  INFO 39632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 14:45:02.907  INFO 39632 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 12.247 seconds (JVM running for 13.633)
+2022-08-17 14:47:12.806  INFO 39632 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 14:47:12.807  INFO 39632 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 14:47:12.811  INFO 39632 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-17 14:47:18.013  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:00:01.809  WARN 39632 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'capacitor': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'capacitor': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 2, column: 22]]
+2022-08-17 15:00:33.095  WARN 39632 --- [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'pixel': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'pixel': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 2, column: 18]]
+2022-08-17 15:00:56.775  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:32.010  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:37.407  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.061  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.177  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.244  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.380  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.503  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.612  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.709  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.831  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:47.973  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.095  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.238  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.374  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.502  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.629  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.748  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:48.889  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.012  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.136  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.261  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.372  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.495  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.620  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.742  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.854  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:49.993  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.132  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.243  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.381  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.489  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.613  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.722  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.815  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:50.938  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.074  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.168  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.256  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.369  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.478  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.603  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.741  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.865  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:51.976  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.081  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.222  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.359  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.500  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.623  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.746  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.840  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:52.967  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.056  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.179  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.319  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.460  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.567  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.693  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.803  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:53.927  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.052  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.161  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.268  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.359  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.480  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.574  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.717  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.823  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:54.930  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.068  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.191  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.328  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.453  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.576  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.701  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.823  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:55.901  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.038  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.147  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.284  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.393  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.506  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.624  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.764  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.874  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:56.964  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.076  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.196  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.274  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.398  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.538  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.620  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.741  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.871  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:57.991  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.114  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.222  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.333  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.457  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.568  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.664  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:03:58.805  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:33.466  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:33.611  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:33.750  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:33.857  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:33.966  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.095  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.228  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.338  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.445  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.572  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.709  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.834  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:34.930  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.048  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.164  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.288  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.400  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.522  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.679  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.804  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:35.942  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.083  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.219  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.345  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.468  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.590  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.702  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.855  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:36.977  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.100  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.209  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.333  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.460  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.580  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.703  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.829  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:37.937  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.077  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.216  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.337  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.447  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.544  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.681  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.820  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:38.943  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.082  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.204  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.374  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.498  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.625  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.748  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.872  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:39.984  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.154  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.280  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.415  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.572  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.691  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.833  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:40.972  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.078  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.202  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.307  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.433  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.574  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.700  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.853  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:41.964  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.071  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.210  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.286  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.415  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.523  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.646  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.770  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:42.880  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.019  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.159  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.296  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.435  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.590  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.716  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:43.869  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.022  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.177  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.349  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.443  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.563  INFO 39632 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.671  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.798  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:44.937  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.072  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.183  INFO 39632 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.291  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.414  INFO 39632 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.524  INFO 39632 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.664  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.794  INFO 39632 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:45.926  INFO 39632 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:46.038  INFO 39632 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:04:58.708  INFO 39632 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:04:58.713  INFO 39632 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:05:28.171 ERROR 39632 --- [http-nio-8080-exec-3] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:05:46.188  INFO 39632 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:17:03.554 ERROR 39632 --- [http-nio-8080-exec-10] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:18:25.799 ERROR 39632 --- [http-nio-8080-exec-2] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:19:00.761 ERROR 39632 --- [http-nio-8080-exec-6] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:19:14.340 ERROR 39632 --- [http-nio-8080-exec-8] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:19:41.613 ERROR 39632 --- [http-nio-8080-exec-1] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:23:17.149 ERROR 39632 --- [http-nio-8080-exec-4] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:32:44.806  INFO 46480 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 46480 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 15:32:44.810  INFO 46480 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 15:32:44.921  INFO 46480 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 15:32:44.922  INFO 46480 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 15:32:46.858  INFO 46480 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 15:32:46.990  INFO 46480 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2022-08-17 15:32:48.608  INFO 46480 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 15:32:48.634  INFO 46480 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 15:32:48.635  INFO 46480 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 15:32:48.875  INFO 46480 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 15:32:48.875  INFO 46480 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3952 ms
+2022-08-17 15:32:49.289  INFO 46480 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 15:32:49.407  INFO 46480 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 15:32:49.835  INFO 46480 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 15:32:50.076  INFO 46480 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 15:32:50.434  INFO 46480 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 15:32:50.508  INFO 46480 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 15:32:52.065  INFO 46480 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 15:32:52.082  INFO 46480 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 15:32:53.279  INFO 46480 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5010d5ac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10e4d2dc, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e579b50, org.springframework.security.web.header.HeaderWriterFilter@3f7e5eaf, org.springframework.web.filter.CorsFilter@506acacb, org.springframework.security.web.authentication.logout.LogoutFilter@382c17df, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@644b5724, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@420f60e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17683723, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78f1425e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2086ccf4, org.springframework.security.web.session.SessionManagementFilter@5d046f01, org.springframework.security.web.access.ExceptionTranslationFilter@12b135c7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b5fedbe]
+2022-08-17 15:32:53.569  WARN 46480 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 15:32:55.265  INFO 46480 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 15:32:55.343  INFO 46480 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 15:32:55.369  INFO 46480 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 11.441 seconds (JVM running for 12.877)
+2022-08-17 15:33:17.273  INFO 46480 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 15:33:17.273  INFO 46480 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 15:33:17.276  INFO 46480 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-17 15:33:17.359 ERROR 46480 --- [http-nio-8080-exec-2] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:35:51.922  INFO 37208 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 37208 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 15:35:51.924  INFO 37208 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 15:35:52.005  INFO 37208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 15:35:52.005  INFO 37208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 15:35:54.104  INFO 37208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 15:35:54.304  INFO 37208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 175 ms. Found 4 JPA repository interfaces.
+2022-08-17 15:35:56.224  INFO 37208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 15:35:56.251  INFO 37208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 15:35:56.252  INFO 37208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 15:35:56.473  INFO 37208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 15:35:56.474  INFO 37208 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4468 ms
+2022-08-17 15:35:56.809  INFO 37208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 15:35:56.942  INFO 37208 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 15:35:57.357  INFO 37208 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 15:35:57.612  INFO 37208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 15:35:57.950  INFO 37208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 15:35:58.034  INFO 37208 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 15:35:59.639  INFO 37208 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 15:35:59.653  INFO 37208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 15:36:00.678  INFO 37208 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a45452c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e766a37, org.springframework.security.web.context.SecurityContextPersistenceFilter@25168e34, org.springframework.security.web.header.HeaderWriterFilter@942c1db, org.springframework.security.web.authentication.logout.LogoutFilter@6b837df6, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@2e3b4d2f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@293ef660, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@697d1128, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f6d8d9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4163fa90, org.springframework.security.web.session.SessionManagementFilter@46953756, org.springframework.security.web.access.ExceptionTranslationFilter@492f277e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@309dc9f6]
+2022-08-17 15:36:00.954  WARN 37208 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 15:36:02.458  INFO 37208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 15:36:02.529  INFO 37208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 15:36:02.546  INFO 37208 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 11.265 seconds (JVM running for 12.077)
+2022-08-17 15:36:05.871  INFO 37208 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 15:36:05.871  INFO 37208 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 15:36:05.873  INFO 37208 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-17 15:37:31.806  INFO 47728 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 47728 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 15:37:31.809  INFO 47728 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 15:37:31.884  INFO 47728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 15:37:31.885  INFO 47728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 15:37:33.369  INFO 47728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 15:37:33.479  INFO 47728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 4 JPA repository interfaces.
+2022-08-17 15:37:34.875  INFO 47728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 15:37:34.894  INFO 47728 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 15:37:34.895  INFO 47728 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 15:37:35.071  INFO 47728 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 15:37:35.072  INFO 47728 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3186 ms
+2022-08-17 15:37:35.361  INFO 47728 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 15:37:35.458  INFO 47728 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 15:37:35.804  INFO 47728 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 15:37:36.011  INFO 47728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 15:37:36.286  INFO 47728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 15:37:36.349  INFO 47728 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 15:37:37.636  INFO 47728 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 15:37:37.647  INFO 47728 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 15:37:38.648  INFO 47728 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f532cf4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@671dee67, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f7a2d80, org.springframework.security.web.header.HeaderWriterFilter@79c22b18, org.springframework.web.filter.CorsFilter@150c100c, org.springframework.security.web.authentication.logout.LogoutFilter@714cdbd6, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@1916de4b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7965dddc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f32948e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76001e9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@554c94d6, org.springframework.security.web.session.SessionManagementFilter@7f7da021, org.springframework.security.web.access.ExceptionTranslationFilter@212f7e01, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52896325]
+2022-08-17 15:37:38.893  WARN 47728 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 15:37:40.477  INFO 47728 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 15:37:40.544  INFO 47728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 15:37:40.558  INFO 47728 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 9.394 seconds (JVM running for 10.19)
+2022-08-17 15:37:50.665  INFO 47728 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 15:37:50.666  INFO 47728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 15:37:50.670  INFO 47728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-08-17 15:37:50.744 ERROR 47728 --- [http-nio-8080-exec-2] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:38:41.540  INFO 45620 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 45620 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 15:38:41.542  INFO 45620 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 15:38:41.628  INFO 45620 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 15:38:41.629  INFO 45620 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 15:38:43.218  INFO 45620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 15:38:43.340  INFO 45620 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2022-08-17 15:38:44.845  INFO 45620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 15:38:44.868  INFO 45620 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 15:38:44.869  INFO 45620 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 15:38:45.064  INFO 45620 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 15:38:45.065  INFO 45620 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3435 ms
+2022-08-17 15:38:45.365  INFO 45620 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 15:38:45.462  INFO 45620 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 15:38:45.788  INFO 45620 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 15:38:45.989  INFO 45620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 15:38:46.258  INFO 45620 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 15:38:46.318  INFO 45620 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 15:38:47.733  INFO 45620 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 15:38:47.750  INFO 45620 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 15:38:48.882  INFO 45620 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bddc8a4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bc18ad6, org.springframework.security.web.context.SecurityContextPersistenceFilter@492f277e, org.springframework.security.web.header.HeaderWriterFilter@ade86cd, org.springframework.web.filter.CorsFilter@6cb7a4b, org.springframework.security.web.authentication.logout.LogoutFilter@61eb12b9, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@4f9aeeb0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6107c9a0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@942c1db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76b1fa29, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58a2b778, org.springframework.security.web.session.SessionManagementFilter@4eeb6ef, org.springframework.security.web.access.ExceptionTranslationFilter@7ac7bb6e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@293ef660]
+2022-08-17 15:38:49.163  WARN 45620 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 15:38:50.783  INFO 45620 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 15:38:50.858  INFO 45620 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 15:38:50.879  INFO 45620 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 10.019 seconds (JVM running for 10.693)
+2022-08-17 15:39:04.802  INFO 45620 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 15:39:04.803  INFO 45620 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 15:39:04.805  INFO 45620 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-17 15:39:04.874 ERROR 45620 --- [http-nio-8080-exec-2] c.n.b.b.security.jwt.JwtTokenUtil        : JWT is invalid
+2022-08-17 15:41:07.997  INFO 48016 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Starting BlockShopApplication using Java 17.0.2 on NB_SB_2021 with PID 48016 (C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop\build\classes\java\main started by Sky Bollin in C:\Source\LJ2022\RepetitionProjekt\Backend\blockShop)
+2022-08-17 15:41:08.000  INFO 48016 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-08-17 15:41:08.113  INFO 48016 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-17 15:41:08.114  INFO 48016 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-17 15:41:09.756  INFO 48016 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-17 15:41:09.897  INFO 48016 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 4 JPA repository interfaces.
+2022-08-17 15:41:11.524  INFO 48016 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-17 15:41:11.574  INFO 48016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-17 15:41:11.575  INFO 48016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-17 15:41:11.785  INFO 48016 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-17 15:41:11.785  INFO 48016 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3670 ms
+2022-08-17 15:41:12.140  INFO 48016 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-17 15:41:12.259  INFO 48016 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-17 15:41:12.660  INFO 48016 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-17 15:41:12.960  INFO 48016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-17 15:41:13.342  INFO 48016 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-17 15:41:13.439  INFO 48016 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-08-17 15:41:15.434  INFO 48016 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-17 15:41:15.456  INFO 48016 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-17 15:41:16.921  INFO 48016 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d818d86, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@181df5fa, org.springframework.security.web.context.SecurityContextPersistenceFilter@2338f41, org.springframework.security.web.header.HeaderWriterFilter@7e844f32, org.springframework.web.filter.CorsFilter@3a3f1315, org.springframework.security.web.authentication.logout.LogoutFilter@1228ba43, ch.noseryoung.blockshop.blockshop.security.jwt.JwtTokenFilter@e9c9ebf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@37f28099, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31f43abb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@24fff56c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16d7e7d0, org.springframework.security.web.session.SessionManagementFilter@170c9009, org.springframework.security.web.access.ExceptionTranslationFilter@403fe514, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d5abb0f]
+2022-08-17 15:41:17.264  WARN 48016 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-17 15:41:19.075  INFO 48016 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-17 15:41:19.147  INFO 48016 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-17 15:41:19.168  INFO 48016 --- [restartedMain] c.n.b.blockshop.BlockShopApplication     : Started BlockShopApplication in 11.962 seconds (JVM running for 12.857)
+2022-08-17 15:41:36.931  INFO 48016 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-17 15:41:36.931  INFO 48016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-17 15:41:36.933  INFO 48016 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-08-17 15:46:33.927  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:46:33.927  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:46:54.601  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:46:54.601  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:47:08.232  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:47:14.393  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:47:20.783  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:49:27.200  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:49:27.200  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:49:32.906  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.067  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.162  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.284  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.411  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.535  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.645  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.784  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:33.911  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.031  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.158  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.267  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.361  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.500  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.610  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.722  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.845  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:34.911  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.015  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.071  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.140  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.266  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.345  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.467  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.591  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.699  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.809  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:35.901  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.010  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.101  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.210  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.288  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.412  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.538  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.677  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.802  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:36.926  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.063  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.173  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.313  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.441  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.566  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.692  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.799  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:37.940  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.082  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.207  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.300  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.408  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.515  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.625  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.732  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.826  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:38.953  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.066  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.149  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.262  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.388  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.497  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.621  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.714  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.819  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:39.927  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.075  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.192  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.311  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.405  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.498  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.626  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.730  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.826  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:40.947  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.071  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.165  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.276  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.385  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.507  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.632  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.736  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.854  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:41.963  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.074  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.181  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.292  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.381  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.503  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.642  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.752  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.845  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:42.965  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.075  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.183  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.292  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.384  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.486  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.580  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.687  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.811  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:43.889  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:44.000  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Posting new Block
+2022-08-17 15:49:50.497  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:49:50.497  INFO 48016 --- [http-nio-8080-exec-9] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:52:19.712  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:52:19.712  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:53:42.667  INFO 48016 --- [http-nio-8080-exec-8] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:53:42.667  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:53:52.570  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:53:52.570  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:54:15.995  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:56:57.389  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:56:57.389  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:16.587  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:16.587  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:29.062  INFO 48016 --- [http-nio-8080-exec-7] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:41.530  INFO 48016 --- [http-nio-8080-exec-3] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:41.530  INFO 48016 --- [http-nio-8080-exec-1] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:50.375  INFO 48016 --- [http-nio-8080-exec-6] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:57:50.375  INFO 48016 --- [http-nio-8080-exec-5] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:59:32.126  INFO 48016 --- [http-nio-8080-exec-10] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:59:37.365  INFO 48016 --- [http-nio-8080-exec-2] c.n.b.blockshop.block.BlockService       : Getting all Blocks
+2022-08-17 15:59:37.365  INFO 48016 --- [http-nio-8080-exec-4] c.n.b.blockshop.block.BlockService       : Getting all Blocks
