@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -16,6 +17,7 @@ public class BlockService {
 
     @Autowired
     private BlockRepository blockRepository;
+
     public List<Block> getAllBlocksRange(Long max, Long start) {
         if (max < 0 || start < 0)
             return Collections.emptyList();
@@ -28,15 +30,16 @@ public class BlockService {
     }
     public Block getBlock(Long id) {
         log.info("Getting Block with id : " + id);
-        return blockRepository.getReferenceById(id);
+        Optional<Block> block = blockRepository.findById(id);
+        return block.orElseGet(Block::new);
     }
     public Block postBlock(Block block) {
         log.info("Posting new Block");
         return blockRepository.save(block);
     }
     public Block putBlock(Block block, Long id) {
-        log.info("Putting Block with id : " + block.getId());
         if (!blockRepository.existsById(id)) return null;
+        log.info("Putting Block with id : " + block.getId());
         block.setId(id);
         return blockRepository.save(block);
     }

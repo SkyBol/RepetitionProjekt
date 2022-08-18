@@ -26,7 +26,7 @@ public class BlockController {
         return ResponseEntity.ok(blockService.getBlock(id));
     }
 
-    @PostMapping("")
+    @PostMapping("/")
     public ResponseEntity<Block> postBlock(@RequestBody @Valid Block block) {
         return ResponseEntity.ok(blockService.postBlock(block));
     }

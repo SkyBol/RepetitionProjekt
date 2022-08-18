@@ -65,6 +65,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         CorsConfiguration cors = new CorsConfiguration().applyPermitDefaultValues();
+        cors.addAllowedMethod("DELETE");
+        cors.addAllowedMethod("POST");
+        cors.addAllowedMethod("PUT");
         cors.addExposedHeader("token");
         cors.addAllowedHeader("Authorization");
         http.cors().configurationSource(request -> cors)
