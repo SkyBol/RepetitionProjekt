@@ -3,6 +3,7 @@ package ch.noseryoung.blockshop.blockshop.block;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -27,8 +28,8 @@ public class BlockController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Block> postBlock(@RequestBody @Valid Block block) {
-        return ResponseEntity.ok(blockService.postBlock(block));
+    public ResponseEntity<Block> postBlock(@RequestBody @Valid Block block, @RequestParam("image") Optional<MultipartFile> multipartFile) {
+        return ResponseEntity.ok(blockService.postBlock(block, multipartFile));
     }
 
     @PutMapping("/{id}")

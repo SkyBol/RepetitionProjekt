@@ -25,7 +25,7 @@ export async function getBlock(id : number) {
     );
 }
 
-export async function postBlock(block : block) {
+export async function postBlock(block : block, formData : FormData | null) {
     return (
         await axiosDefault.post('/api/block/',
             { id: block.id, name : block.name, imageLink : block.imageLink }

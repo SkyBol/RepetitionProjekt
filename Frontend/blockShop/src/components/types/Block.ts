@@ -1,7 +1,7 @@
 type block = {
     id : number | undefined,
     name : string | undefined,
-    imageLink : string | undefined
+    imageLink : string | undefined,
 }
 
 export default block;

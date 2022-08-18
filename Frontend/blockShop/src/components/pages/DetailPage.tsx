@@ -12,6 +12,7 @@ function Detail() {
     const [edit, setEdit] = useState<boolean>(false);
     const [isNewBlock, setIsNewBlock] = useState<boolean>(false);
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+    const [hasImage, setHasImage] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const changeIsNewBlockEdit = () => {
@@ -43,14 +44,21 @@ function Detail() {
     let formik = useFormik({
         initialValues: {
             name: block?.name,
-            imageLink: block?.imageLink
+            imageLink: block?.imageLink,
+            file: null,
         },
         onSubmit: (values) => {
             setIsSubmitting(true);
-            if (isNewBlock)
-                postBlock({ id: 0, name: values.name, imageLink: values.imageLink })
+            if (isNewBlock) {
+                let formData = null;
+                if (values.file !== null) {
+                    formData = new FormData();
+                    formData.append("file", values.file[values.file.length - 1]);
+                }
+                postBlock( { id: 0, name: values.name, imageLink: values.imageLink }, formData )
                     .then(() => { setEdit(false); setIsNewBlock(false); })
                     .catch(() => {});
+            }
             else
                 putBlock(Number(id), { id: 0, name: values.name, imageLink: values.imageLink})
                     .then(() => { setEdit(false); })
@@ -84,8 +92,17 @@ function Detail() {
                 InputLabelProps={{ shrink: !isNewBlock || formik.touched.imageLink }}
                 value={ formik.values.imageLink ? formik.values.imageLink : '' }
             />
+
+            <input id="file" name="file" type="file" hidden
+                onChange={(event) => { formik.setFieldValue("file", event?.currentTarget?.files ? event.currentTarget.files[event.currentTarget.files.length - 1] : ""); }} />
+            <label htmlFor="file" >
+                <Button component="span" variant="contained" color={ formik.values.file === null ? "primary" : "success"} >
+                    { formik.values.file === null ? 'Upload' : 'Uploaded' }
+                </Button>
+            </label> 
+
             { isNewBlock ? <></> :  <Button color="primary" onClick={() => { setEdit(!edit); }} > Edit </Button> }
-                                    <Button color="success" onClick={() => { formik.submitForm(); }} disabled={ !edit || isSubmitting }> { isNewBlock ? 'Create' : 'Save' } </Button>
+            <Button color="success" onClick={() => { formik.submitForm(); }} disabled={ !edit || isSubmitting }> { isNewBlock ? 'Create' : 'Save' } </Button>
             { isNewBlock ? <></> :  <Button color="error"   onClick={() => { id && deleteBlock(Number(id)).then(() => { navigate('/'); })}} disabled={ !edit }> Delete </Button> }
         </div>
     );
