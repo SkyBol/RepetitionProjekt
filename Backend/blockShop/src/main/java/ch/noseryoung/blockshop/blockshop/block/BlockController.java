@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/block")
@@ -14,7 +15,9 @@ public class BlockController {
     private BlockService blockService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Block>> getAllBlock() {
+    public ResponseEntity<List<Block>> getAllBlock(@RequestParam("max") Optional<Long> max, @RequestParam("start") Optional<Long> start) {
+        if (max.isPresent() && start.isPresent())
+            return ResponseEntity.ok(blockService.getAllBlocksRange(max.get(), start.get()));
         return ResponseEntity.ok(blockService.getAllBlocks());
     }
 

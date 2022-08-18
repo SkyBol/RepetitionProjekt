@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -15,7 +16,12 @@ public class BlockService {
 
     @Autowired
     private BlockRepository blockRepository;
-
+    public List<Block> getAllBlocksRange(Long max, Long start) {
+        if (max < 0 || start < 0)
+            return Collections.emptyList();
+        log.info("Getting Blocks in Range. MAX: " + max + " - START: " + start);
+        return blockRepository.getWithRange(max, start);
+    }
     public List<Block> getAllBlocks() {
         log.info("Getting all Blocks");
         return blockRepository.findAll();

@@ -9,6 +9,14 @@ export async function getAllBlocks() {
     )
 }
 
+export async function getAllBlocksInRange(limit : number, offset : number) {
+    return (
+        await axiosDefault.get('/api/block/?max=' + limit + '&start=' + offset)
+            .then(res => { return res.data; })
+            .catch(err => { throw err; })
+    );
+}
+
 export async function getBlock({id} : {id : number}) {
     return (
         await axiosDefault.get('/api/block/' + id)
