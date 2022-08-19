@@ -25,11 +25,20 @@ export async function getBlock(id : number) {
     );
 }
 
-export async function postBlock(block : block, formData : FormData | null) {
+export async function postBlock(block : block) {
     return (
         await axiosDefault.post('/api/block/',
             { id: block.id, name : block.name, imageLink : block.imageLink }
         ).catch(err => { throw err; })
+    );
+}
+
+export async function postPicture(id : number, formData : FormData) {
+    return (
+        await axiosDefault.post('/api/block/image/',
+            formData
+        ).then((res) => {return res.data})
+        .catch(err => { throw err; })
     );
 }
 

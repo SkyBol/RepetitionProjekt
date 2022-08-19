@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from 'yup';
-import { deleteBlock, getBlock, postBlock, putBlock } from "../service/BlockService";
+import { deleteBlock, getBlock, postBlock, postPicture, putBlock } from "../service/BlockService";
 import block, { emptyBlock } from "../types/Block";
 
 function Detail() {
@@ -12,7 +12,6 @@ function Detail() {
     const [edit, setEdit] = useState<boolean>(false);
     const [isNewBlock, setIsNewBlock] = useState<boolean>(false);
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-    const [hasImage, setHasImage] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const changeIsNewBlockEdit = () => {
@@ -50,14 +49,21 @@ function Detail() {
         onSubmit: (values) => {
             setIsSubmitting(true);
             if (isNewBlock) {
-                let formData = null;
                 if (values.file !== null) {
-                    formData = new FormData();
-                    formData.append("file", values.file[values.file.length - 1]);
-                }
-                postBlock( { id: 0, name: values.name, imageLink: values.imageLink }, formData )
-                    .then(() => { setEdit(false); setIsNewBlock(false); })
-                    .catch(() => {});
+                    const formData = new FormData();
+                    formData.append("multipartFile", values.file[0]);
+
+                    postBlock({ id: 0, name: values.name, imageLink: 'user-photos/0/unknown.txt' })
+                    .then((res) => {
+                        postPicture(res.data.id, formData)
+                        .then(() => {})
+                        .catch(() => {});
+                    })
+                        .catch(() => {postBlock({ id: 0, name: values.name, imageLink: values.imageLink })});
+                } else
+                    postBlock( { id: 0, name: values.name, imageLink: values.imageLink } )
+                        .then(() => { setEdit(false); setIsNewBlock(false); })
+                        .catch(() => {});
             }
             else
                 putBlock(Number(id), { id: 0, name: values.name, imageLink: values.imageLink})
