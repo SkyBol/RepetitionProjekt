@@ -17,9 +17,12 @@ public class BlockController {
     private BlockService blockService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Block>> getAllBlock(@RequestParam("max") Optional<Long> max, @RequestParam("start") Optional<Long> start) {
-        if (max.isPresent() && start.isPresent())
+    public ResponseEntity<List<Block>> getAllBlock(@RequestParam("max") Optional<Long> max, @RequestParam("start") Optional<Long> start, @RequestParam("search") Optional<String> search) {
+        if (max.isPresent() && start.isPresent()) {
+            if (search.isPresent())
+                return ResponseEntity.ok(blockService.getAllBlocksRangeSearch(max.get(), start.get(), search.get()));
             return ResponseEntity.ok(blockService.getAllBlocksRange(max.get(), start.get()));
+        }
         return ResponseEntity.ok(blockService.getAllBlocks());
     }
 

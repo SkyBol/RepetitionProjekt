@@ -2,13 +2,15 @@ type block = {
     id : number | undefined,
     name : string | undefined,
     imageLink : string | undefined,
+    description : string | undefined,
 }
 
 export default block;
 
 
 export const emptyBlock : block = {
-    id : undefined,
+    id: undefined,
     name: undefined,
-    imageLink: undefined
+    imageLink: undefined,
+    description: undefined
 }

@@ -20,11 +20,17 @@ public class BlockService {
     @Autowired
     private BlockRepository blockRepository;
 
+    public List<Block> getAllBlocksRangeSearch(Long max, Long start, String search) {
+        if (max < 0 || start < 0)
+            return Collections.emptyList();
+        log.info("Getting Blocks in Range. MAX: " + max + " - START: " + start + " WHERE LIKE: " + search);
+        return blockRepository.getWithRangeAndWhereNameAndOrder(max, start, search);
+    }
     public List<Block> getAllBlocksRange(Long max, Long start) {
         if (max < 0 || start < 0)
             return Collections.emptyList();
         log.info("Getting Blocks in Range. MAX: " + max + " - START: " + start);
-        return blockRepository.getWithRange(max, start);
+        return blockRepository.getWithRangeAndOrder(max, start);
     }
     public List<Block> getAllBlocks() {
         log.info("Getting all Blocks");

@@ -18,6 +18,20 @@ function Detail() {
         setEdit(true);
         setIsNewBlock(true);
     }
+    const imageUpload = (file : File | null, result : any) => {
+        if (file !== null) {
+            const formData = new FormData();
+            formData.append("file", file, "file");
+            postPicture(result.data.id, formData)
+                .then(() => {})
+                .catch(() => {});
+        } else 
+            postPictureLink(result.data.id, result.data.imageLink ? result.data.imageLink : "")
+                .then(() => {})
+                .catch(() => {});
+
+        setEdit(false); setIsNewBlock(false);
+    }
 
     useEffect(() => {
         if (id === undefined || isNaN(Number(id)) || Number(id) === -1) {
@@ -39,40 +53,24 @@ function Detail() {
             .required('Required'),
         imageLink: yup.string()
             .required('Required'),
+        description: yup.string().max(20000, 'Max Characters is 20\'000')
+            .required('Required'),
     });
     let formik = useFormik({
         initialValues: {
             name: block?.name,
             imageLink: block?.imageLink,
+            description: block?.description,
             file: null,
         },
         onSubmit: (values) => {
             setIsSubmitting(true);
-            if (isNewBlock) {
-                if (values.file !== null) {
-                    const formData = new FormData();
-                    formData.append("file", values.file, "file");
-
-                    postBlock({ id: 0, name: values.name, imageLink: values.imageLink })
-                        .then((res) => {
-                            postPicture(res.data.id, formData)
-                                .then(() => {})
-                                .catch(() => {});
-                            setEdit(false); setIsNewBlock(false);
-                        }).catch(() => {});
-                } else
-                    postBlock( { id: 0, name: values.name, imageLink: values.imageLink } )
-                        .then((res) => {
-                            postPictureLink(res.data.id, values.imageLink ? values.imageLink : "")
-                                .then(() => {})
-                                .catch(() => {});
-                            setEdit(false); setIsNewBlock(false);
-                        }).catch(() => {});
-            }
+            if (isNewBlock)
+                postBlock({ id: 0, name: values.name, imageLink: values.imageLink, description: values.description })
+                    .then((res) => {imageUpload(values.file, res)}).catch(() => {});
             else
-                putBlock(Number(id), { id: 0, name: values.name, imageLink: values.imageLink})
-                    .then(() => { setEdit(false); })
-                    .catch(() => {});
+                putBlock(Number(id), { id: 0, name: values.name, imageLink: values.imageLink, description: values.description })
+                    .then((res) => { imageUpload(values.file, res) }).catch(() => {});
             setIsSubmitting(false);
         },
         validationSchema: validationSchema,
@@ -80,7 +78,7 @@ function Detail() {
     });
 
     return (
-        <div>
+        <div className="DetailPage">
             <Button onClick={() => { navigate(-1); }} > Back </Button>
             <TextField
                 id='name'
@@ -102,11 +100,23 @@ function Detail() {
                 InputLabelProps={{ shrink: !isNewBlock || formik.touched.imageLink }}
                 value={ formik.values.imageLink ? formik.values.imageLink : '' }
             />
+            <TextField
+                id='description'
+                name='description'
+                label='description'
+                disabled={ !edit }
+                error={ !!(formik.errors.description && formik.touched.description) }
+                InputLabelProps={{ shrink: !isNewBlock || formik.touched.description }}
+                multiline
+                rows={ 4 }
+                onChange={ formik.handleChange }
+                value= { formik.values.description ? formik.values.description : '' }
+            />
 
-            <input id="file" name="file" type="file" hidden
+            <input id="file" name="file" type="file" hidden disabled={ !edit }
                 onChange={(event) => { formik.setFieldValue("file", event?.currentTarget?.files ? event.currentTarget.files[event.currentTarget.files.length - 1] : ""); }} />
             <label htmlFor="file" >
-                <Button component="span" variant="contained" color={ formik.values.file === null ? "primary" : "success"} >
+                <Button component="span" variant="contained" color={ formik.values.file === null ? "primary" : "success"} disabled={ !edit } >
                     { formik.values.file === null ? 'Upload' : 'Uploaded' }
                 </Button>
             </label> 

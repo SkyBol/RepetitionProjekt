@@ -16,6 +16,14 @@ export async function getAllBlocksInRange(limit : number, offset : number) {
             .catch(err => { throw err; })
     );
 }
+export async function getAllBlocksInRangeWithSearchName(limit : number, offset : number, searchName : string) {
+    if (searchName === undefined || searchName === '') return (getAllBlocksInRange(limit, offset))
+    return (
+        await axiosDefault.get('/api/block/?max=' + limit + '&start=' + offset + '&search=' + searchName)
+            .then(res => { return res.data; })
+            .catch(err => { throw err; })
+    );
+}
 
 export async function getBlock(id : number) {
     return (
@@ -28,7 +36,7 @@ export async function getBlock(id : number) {
 export async function postBlock(block : block) {
     return (
         await axiosDefault.post('/api/block/',
-            { id: block.id, name : block.name, imageLink : block.imageLink }
+            { id: block.id, name : block.name, imageLink : block.imageLink, description: block.description }
         ).catch(err => { throw err; })
     );
 }
@@ -53,7 +61,7 @@ export async function postPictureLink(id : number, link : string) {
 export async function putBlock(id : number, block : block) {
     return (
         await axiosDefault.put('/api/block/' + id, 
-            { id: id, name: block.name, imageLink: block.imageLink}
+            { id: id, name: block.name, imageLink: block.imageLink, description: block.description }
         ).catch(err => { throw err; })
     );
 }
