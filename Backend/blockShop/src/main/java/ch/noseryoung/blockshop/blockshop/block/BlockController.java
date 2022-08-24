@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +33,7 @@ public class BlockController {
         return ResponseEntity.ok(blockService.postBlock(block));
     }
     @PostMapping("/image/{id}")
-    public ResponseEntity<String> postImage(@PathVariable("id") Long id, @RequestBody @NotNull MultipartFile multipartFile) {
+    public ResponseEntity<String> postImage(@PathVariable("id") Long id, @RequestPart("file") MultipartFile multipartFile) {
         try {return ResponseEntity.ok(blockService.postImage(id, multipartFile));}
         catch (IOException e) {return ResponseEntity.status(400).body("Error");}
     }

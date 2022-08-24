@@ -59,7 +59,7 @@ public class FileUploadUtil {
     public static String saveFile(Long id, MultipartFile multipartFile) throws IOException {
         checkUploadDir("");
 
-        if (multipartFile.getContentType() == null) throw new IOException("Error: Type is Unknown");
+        if (multipartFile == null || multipartFile.getContentType() == null) throw new IOException("Error: Type is Unknown");
 
         try (
                 InputStream inputStream = multipartFile.getInputStream();

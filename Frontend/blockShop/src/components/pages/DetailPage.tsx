@@ -51,15 +51,14 @@ function Detail() {
             if (isNewBlock) {
                 if (values.file !== null) {
                     const formData = new FormData();
-                    formData.append("multipartFile", values.file[0]);
+                    formData.append("file", values.file, "file");
 
-                    postBlock({ id: 0, name: values.name, imageLink: 'user-photos/0/unknown.txt' })
-                    .then((res) => {
-                        postPicture(res.data.id, formData)
-                        .then(() => {})
-                        .catch(() => {});
-                    })
-                        .catch(() => {postBlock({ id: 0, name: values.name, imageLink: values.imageLink })});
+                    postBlock({ id: 0, name: values.name, imageLink: values.imageLink })
+                        .then((res1) => {
+                            postPicture(res1.data.id, formData)
+                                .then((res2) => { setEdit(false); setIsNewBlock(false); })
+                                .catch((err) => {});
+                        }).catch(() => {})
                 } else
                     postBlock( { id: 0, name: values.name, imageLink: values.imageLink } )
                         .then(() => { setEdit(false); setIsNewBlock(false); })

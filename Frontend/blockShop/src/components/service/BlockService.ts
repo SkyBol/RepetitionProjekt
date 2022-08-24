@@ -35,7 +35,7 @@ export async function postBlock(block : block) {
 
 export async function postPicture(id : number, formData : FormData) {
     return (
-        await axiosDefault.post('/api/block/image/',
+        await axiosDefault.post('/api/block/image/' + id,
             formData
         ).then((res) => {return res.data})
         .catch(err => { throw err; })
