@@ -44,7 +44,19 @@ public class BlockService {
     }
 
     public String postImage(Long id, MultipartFile multipartFile) throws IOException {
-        return FileUploadUtil.saveFile(id, multipartFile);
+        String file = FileUploadUtil.saveFile(id, multipartFile);
+        Block block = blockRepository.getReferenceById(id);
+        block.setImageLink("http://localhost:8080/user-photos/" + id + "/" + file);
+        blockRepository.save(block);
+        return file;
+    }
+
+    public String postImageUpload(Long id, String link) throws IOException {
+        String file = FileUploadUtil.downloadNonFile(id, link);
+        Block block = blockRepository.getReferenceById(id);
+        block.setImageLink("http://localhost:8080/user-photos/" + id + "/" + file);
+        blockRepository.save(block);
+        return file;
     }
 
     public Block putBlock(Block block, Long id) {

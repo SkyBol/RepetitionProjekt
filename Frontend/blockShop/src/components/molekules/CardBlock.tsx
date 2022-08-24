@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import block from "../types/Block";
 
@@ -7,6 +7,12 @@ function CardBlock({ block } : {block : block}) {
 
     return (
         <Card sx={{ minWidth: 200}} >
+            <CardMedia
+                component="img"
+                height="140"
+                image={ block.imageLink }
+                alt="photo"
+            />
             <CardContent>
                 <Typography> { block.id } </Typography>
                 <Typography> { block.name } </Typography>

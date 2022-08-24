@@ -37,22 +37,23 @@ public class FileUploadUtil {
         return "txt";
     }
 
-    public static void downloadNonFile(Block block) throws IOException {
-        Image image = ImageIO.read(new URL(block.getImageLink()));
+    public static String downloadNonFile(Long id, String link) throws IOException {
+        Image image = ImageIO.read(new URL(link));
         if (image == null) throw new IOException("NOT IMAGE");
 
         try (
-                InputStream in = new URL(block.getImageLink()).openStream();
-                ReadableByteChannel readableByteChannel = Channels.newChannel(new URL(block.getImageLink()).openStream())
+                InputStream in = new URL(link).openStream();
+                ReadableByteChannel readableByteChannel = Channels.newChannel(new URL(link).openStream())
         ) {
-            checkUploadDir(block.getId().toString());
-            try (FileOutputStream fileOutputStream = new FileOutputStream(UPLOAD_DIR + "/" + block.getId() + "/" + block.getName() + "." + getImageType(in))) {
+            checkUploadDir(id.toString());
+            String type = getImageType(in);
+            try (FileOutputStream fileOutputStream = new FileOutputStream(UPLOAD_DIR + "/" + id + "/unknown." + type)) {
                 fileOutputStream.getChannel()
                         .transferFrom(readableByteChannel, 0, Long.MAX_VALUE);
             }
-            block.setImageLink(UPLOAD_DIR + "/" + block.getId() + "/" + block.getName() + "." + getImageType(in));
+            return "unknown." + type;
         } catch (IOException ioe) {
-            throw new IOException("Could not save image file: " + block.getId() + "/" + block.getName(), ioe);
+            throw new IOException("Could not save image file: " + id + " - " + link, ioe);
         }
     }
 

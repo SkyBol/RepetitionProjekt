@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import * as yup from 'yup';
-import { deleteBlock, getBlock, postBlock, postPicture, putBlock } from "../service/BlockService";
+import { deleteBlock, getBlock, postBlock, postPicture, postPictureLink, putBlock } from "../service/BlockService";
 import block, { emptyBlock } from "../types/Block";
 
 function Detail() {
@@ -54,15 +54,20 @@ function Detail() {
                     formData.append("file", values.file, "file");
 
                     postBlock({ id: 0, name: values.name, imageLink: values.imageLink })
-                        .then((res1) => {
-                            postPicture(res1.data.id, formData)
-                                .then((res2) => { setEdit(false); setIsNewBlock(false); })
-                                .catch((err) => {});
-                        }).catch(() => {})
+                        .then((res) => {
+                            postPicture(res.data.id, formData)
+                                .then(() => {})
+                                .catch(() => {});
+                            setEdit(false); setIsNewBlock(false);
+                        }).catch(() => {});
                 } else
                     postBlock( { id: 0, name: values.name, imageLink: values.imageLink } )
-                        .then(() => { setEdit(false); setIsNewBlock(false); })
-                        .catch(() => {});
+                        .then((res) => {
+                            postPictureLink(res.data.id, values.imageLink ? values.imageLink : "")
+                                .then(() => {})
+                                .catch(() => {});
+                            setEdit(false); setIsNewBlock(false);
+                        }).catch(() => {});
             }
             else
                 putBlock(Number(id), { id: 0, name: values.name, imageLink: values.imageLink})

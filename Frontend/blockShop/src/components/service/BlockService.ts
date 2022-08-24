@@ -42,6 +42,14 @@ export async function postPicture(id : number, formData : FormData) {
     );
 }
 
+export async function postPictureLink(id : number, link : string) {
+    return (
+        await axiosDefault.post('/api/block/image/upload/' + id + "?link=" + link)
+        .then((res) => {return res.data})
+        .catch(err => { throw err; })
+    );
+}
+
 export async function putBlock(id : number, block : block) {
     return (
         await axiosDefault.put('/api/block/' + id, 

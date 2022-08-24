@@ -35,7 +35,12 @@ public class BlockController {
     @PostMapping("/image/{id}")
     public ResponseEntity<String> postImage(@PathVariable("id") Long id, @RequestPart("file") MultipartFile multipartFile) {
         try {return ResponseEntity.ok(blockService.postImage(id, multipartFile));}
-        catch (IOException e) {return ResponseEntity.status(400).body("Error");}
+        catch (IOException e) {return ResponseEntity.status(400).body(e.getMessage());}
+    }
+    @PostMapping("/image/upload/{id}")
+    public ResponseEntity<String> postImageUpload(@PathVariable("id") Long id, @RequestParam("link") String link) {
+        try {return ResponseEntity.ok(blockService.postImageUpload(id, link));}
+        catch (IOException e) {return ResponseEntity.status(400).body(e.getMessage());}
     }
 
     @PutMapping("/{id}")
