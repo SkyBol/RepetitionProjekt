@@ -1,12 +1,12 @@
 package ch.noseryoung.blockshop.blockshop.security.jwt;
 
-public class AuthResponse {
+public class AuthResponseDTO {
     private String email;
     private String accessToken;
 
-    public AuthResponse() { }
+    public AuthResponseDTO() { }
 
-    public AuthResponse(String email, String accessToken) {
+    public AuthResponseDTO(String email, String accessToken) {
         this.email = email;
         this.accessToken = accessToken;
     }

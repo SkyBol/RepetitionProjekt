@@ -9,12 +9,14 @@ function PageSwitch({ page, setPage } : {page : number, setPage : Function}) {
     }
 
     return (
-        <div>
-            <Button 
+        <div className="PageSwitch">
+            <Button
                 variant="contained"
                 onClick={() => { setNewPage( page - 1 ); }}
             >{ '<' }</Button>
             <TextField
+                className="InputPage"
+                label="Page"
                 onChange={ (event) => { setNewPage( event.target.value ); }}
                 value={ page <= 0 ? '' : page }
             />

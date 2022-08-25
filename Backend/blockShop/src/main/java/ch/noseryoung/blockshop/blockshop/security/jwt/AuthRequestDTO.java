@@ -2,7 +2,7 @@ package ch.noseryoung.blockshop.blockshop.security.jwt;
 
 import javax.validation.constraints.NotNull;
 
-public class AuthRequest {
+public class AuthRequestDTO {
     @NotNull
     private String name;
 

@@ -22,7 +22,7 @@ public class JwtService {
     private JwtTokenUtil jwtTokenUtil;
 
 
-    public ResponseEntity<?> authenticateUserWithJWT(AuthRequest request) {
+    public ResponseEntity<?> authenticateUserWithJWT(AuthRequestDTO request) {
         try {
             Authentication authentication = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getName(), request.getPassword())

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { login as login_accout, register as register_account } from '../service/AccountManagement';
+import '../style/Login.css';
 
 function Login({isLogin} : {isLogin : boolean}) {
     const [isSubmitting, setIsSubmitting] = useState<boolean>();
@@ -40,7 +41,7 @@ function Login({isLogin} : {isLogin : boolean}) {
     });
 
     return (
-        <div className="container">
+        <div className="Login">
             <form onSubmit={formik.handleSubmit}>
                 <TextField
                     id='username'
@@ -50,7 +51,7 @@ function Login({isLogin} : {isLogin : boolean}) {
                     error={formik.errors.username ? true : false}
                     defaultValue={formik.initialValues.username}
                     helperText={formik.errors.username}
-                />
+                /> <br />
                 <TextField
                     id='password'
                     name='password'
@@ -60,9 +61,13 @@ function Login({isLogin} : {isLogin : boolean}) {
                     error={formik.errors.password && formik.touched.password ? true : false}
                     defaultValue={formik.initialValues.password}
                     helperText={formik.errors.password}
-                />
-                <Button variant="contained" type="submit" disabled={isSubmitting} > 
+                /> <br />
+                <Button variant="contained" type="submit" disabled={isSubmitting} color={isLogin ? 'primary' : 'secondary'} > 
                     { isLogin ? 'Login' : 'Register' }
+                </Button>
+
+                <Button variant="contained" disabled={isSubmitting} onClick={ () => {navigate(isLogin ? '/register' : '/login');} } color={isLogin ? 'secondary' : 'primary'} > 
+                    { isLogin ? 'Switch to Register' : 'Switch to Login' }
                 </Button>
             </form>
         </div>

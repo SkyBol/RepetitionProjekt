@@ -1,0 +1,21 @@
+.ListPage > .ListPageSettings {
+    width: fit-content;
+    margin: auto;
+}
+
+h1 {
+    width: fit-content;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.PageSwitch {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.List {
+    margin: 10px;
+}

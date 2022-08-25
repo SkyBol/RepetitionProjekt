@@ -15,6 +15,7 @@ import java.util.Iterator;
 import java.util.Locale;
 
 public class FileUploadUtil {
+
     private static final String UPLOAD_DIR = "user-photos/";
 
     public static void checkUploadDir(String userID) throws IOException {

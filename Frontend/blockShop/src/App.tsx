@@ -4,6 +4,7 @@ import ListPage from "./components/pages/ListPage";
 import LoginPage from "./components/pages/LoginPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import ProtectedPages from "./components/pages/ProtectedPages";
+import './components/style/App.css';
 
 function App() {
   return (

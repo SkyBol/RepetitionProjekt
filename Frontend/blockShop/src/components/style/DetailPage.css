@@ -1,0 +1,40 @@
+.DetailPage {
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.splitter {
+    max-width: 50%;
+    float: left;
+    width: fit-content;
+}
+.splitted {
+    margin: auto;
+    width: fit-content;
+    margin: 20px;
+}
+.splitted > div {
+    width: 100%;
+}
+.splitted > img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.splitted > button {
+    width: 25%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+.splitted > label > span {
+    width: 70%;
+    margin-top: 10px;
+}
+.imageGroupField {
+    width: 100%;
+}
+
+.ButtonsDetailPage {
+    float:left;
+    width: fit-content;
+}

@@ -34,9 +34,10 @@ export async function getBlock(id : number) {
 }
 
 export async function postBlock(block : block) {
+    console.log(block.imageLink)
     return (
         await axiosDefault.post('/api/block/',
-            { id: block.id, name : block.name, imageLink : block.imageLink, description: block.description }
+            { id: block.id, name : block.name, imageLink : block.imageLink !== undefined ? block.imageLink : 'a', description: block.description }
         ).catch(err => { throw err; })
     );
 }

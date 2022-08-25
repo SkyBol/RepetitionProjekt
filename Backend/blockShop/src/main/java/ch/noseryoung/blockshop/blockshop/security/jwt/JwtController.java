@@ -21,12 +21,12 @@ public class JwtController {
     private RoleRepository roleRepository;
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
+    public ResponseEntity<?> login(@RequestBody @Valid AuthRequestDTO request) {
         return jwtService.authenticateUserWithJWT(request);
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody @Valid AuthRequest request) {
+    public ResponseEntity<?> register(@RequestBody @Valid AuthRequestDTO request) {
         userRepository.save(new User(request.getName(), request.getPassword(), roleRepository.getByName("user")));
         return jwtService.authenticateUserWithJWT(request);
     }

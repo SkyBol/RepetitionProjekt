@@ -17,7 +17,7 @@ public class JwtTokenUtil {
     private static final Logger log = LogManager.getLogger(JwtTokenUtil.class);
 
     @Value("${app.jwt.secret}")
-    private String SECRET_KEY;
+    private String secretkey;
 
     public String generateAccessToken(User user) {
         return Jwts.builder()
@@ -25,13 +25,13 @@ public class JwtTokenUtil {
                 .setIssuer("CodeJava")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRE_DURATION))
-                .signWith(SignatureAlgorithm.HS512, SECRET_KEY)
+                .signWith(SignatureAlgorithm.HS512, secretkey)
                 .compact();
     }
 
     public boolean validateAccessToken(String token) {
         try {
-            Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
+            Jwts.parser().setSigningKey(secretkey).parseClaimsJws(token);
             return true;
         } catch (ExpiredJwtException ex) {
             log.error("JWT expired");
@@ -54,7 +54,7 @@ public class JwtTokenUtil {
 
     private Claims parseClaims(String token) {
         return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
+                .setSigningKey(secretkey)
                 .parseClaimsJws(token)
                 .getBody();
     }

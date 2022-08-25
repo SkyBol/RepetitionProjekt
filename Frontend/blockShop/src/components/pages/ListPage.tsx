@@ -1,12 +1,13 @@
-import { Button, TextField } from "@mui/material";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { Collapse, IconButton, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Title from "../atom/Title";
-import '../css/ListPage.css';
 import NavBar from "../molekules/NavBar";
 import PageSwitch from "../molekules/PageSwitch";
 import BlockListGrid from "../organisms/BlockListGrid";
 import { getAllBlocksInRangeWithSearchName } from "../service/BlockService";
+import '../style/ListPage.css';
 import block from "../types/Block";
 
 function List() {
@@ -14,6 +15,7 @@ function List() {
     const [page, setPage] = useState<number>(1);
     const [blocksPerPage, setBlocksPerPage] = useState<number>(50);
     const [searchWord, setSearchWord] = useState<string>('');
+    const [settingsOpen, setSettingsOpen] = useState<boolean>(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,20 +33,33 @@ function List() {
     return (
         <div className="ListPage">
             <NavBar />
-            <Title text={ "List" } />
-            <Button variant="contained" onClick={() => { navigate('/-1'); }} > Create </Button>
-            <TextField 
-                onChange={(event) => {setNewBlocksPerPage(event.target.value)}} 
-                label='Blocks per Page'
-                value={blocksPerPage} 
-            />
-            <TextField 
-                onChange={(event) => {setSearchWord(event.target.value)}}
-                label='Search'
-                value={searchWord}
-            />
-            <PageSwitch page={page} setPage={setPage} />
-            <BlockListGrid blockList={blockList} />
+            <div className="ListPageSettings">
+                <h1> List </h1>
+                <PageSwitch page={page} setPage={setPage} />
+
+                <IconButton color="primary" size="large" onClick={() => {setSettingsOpen(!settingsOpen)}} >
+                    <SettingsIcon fontSize="large"/>
+                </IconButton>
+                <IconButton color="primary" size="large" onClick={() => { navigate('/-1'); }}>
+                    <AddCircleIcon fontSize="large"/>
+                </IconButton>
+                
+                <Collapse in={settingsOpen} >
+                    <TextField 
+                        onChange={(event) => {setSearchWord(event.target.value)}}
+                        label='Search'
+                        value={searchWord}
+                    /> <br /> <br />
+                    <TextField 
+                        onChange={(event) => {setNewBlocksPerPage(event.target.value)}} 
+                        label='Blocks per Page'
+                        value={blocksPerPage} 
+                    />
+                </Collapse>
+            </div>
+            <div className="List">
+                <BlockListGrid blockList={blockList} />
+            </div>
         </div>
     );
 }
