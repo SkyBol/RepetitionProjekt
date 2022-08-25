@@ -2,6 +2,8 @@ import { Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Title from "../atom/Title";
+import '../css/ListPage.css';
+import NavBar from "../molekules/NavBar";
 import PageSwitch from "../molekules/PageSwitch";
 import BlockListGrid from "../organisms/BlockListGrid";
 import { getAllBlocksInRangeWithSearchName } from "../service/BlockService";
@@ -27,9 +29,10 @@ function List() {
     }
 
     return (
-        <div>
+        <div className="ListPage">
+            <NavBar />
             <Title text={ "List" } />
-            <Button variant="contained" onClick={() => { navigate('/-1'); }} >Create</Button>
+            <Button variant="contained" onClick={() => { navigate('/-1'); }} > Create </Button>
             <TextField 
                 onChange={(event) => {setNewBlocksPerPage(event.target.value)}} 
                 label='Blocks per Page'
