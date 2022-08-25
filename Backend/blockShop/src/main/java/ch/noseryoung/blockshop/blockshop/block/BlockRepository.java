@@ -9,6 +9,6 @@ public interface BlockRepository extends JpaRepository<Block, Long> {
     @Query(value = "SELECT * FROM block ORDER BY name LIMIT ?1 OFFSET ?2", nativeQuery = true)
     List<Block> getWithRangeAndOrder(Long max, Long start);
 
-    @Query(value = "SELECT * FROM block WHERE name LIKE %?3% ORDER BY name LIMIT ?1 OFFSET ?2", nativeQuery = true)
+    @Query(value = "SELECT * FROM block WHERE name ILIKE %?3% ORDER BY name LIMIT ?1 OFFSET ?2", nativeQuery = true)
     List<Block> getWithRangeAndWhereNameAndOrder(Long max, Long start, String nameLike);
 }
